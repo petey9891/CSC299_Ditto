@@ -15,8 +15,6 @@ class TwitterApi(CrawlerAbstractAPI):
     _delay -- Number of seconds to wait between API calls
     """
 
-    _baseUrl = 'https://api.twitter.com/1.1/search/'
-    _searchQuery = 'tweets.json?q={}&result_type=recent&lang=en&count={}&max_id={}'
     _consumer_key = "NkQPzpiRJZ6CJVeRzrVLqIGuh"
     _consumer_secret = "yMhadrMcNmAQyFGX8YKDWtyX6szbr3hKGwCKrz9xp36KPI7tMX"
     _access_key = "1066866967-dDLwsuOq4YdKRm1v1v4lbzWlu3rTMvPoS8TYjWG"
@@ -27,18 +25,17 @@ class TwitterApi(CrawlerAbstractAPI):
     _api = tweepy.API(_auth)
 
     def initial_nodes(self):
-        initial_tag = '#TeamJB'
+        initial_tags = ['#TeamJB', '#TeamRauner']
 
-        return [(initial_tag, self.make_node_tag(initial_tag, 0))]
+        return [(initial_tag, self.make_node_tag(initial_tag, 0)) for initial_tag in initial_tags]
 
-    def make_tags_url(self, tag):
+    def make_node_user(self, name, tag, depth):
         """
-           Returns a URL that can be used to issue the query.
+               Makes a node representing a user
         """
-        q_string = urllib.parse.quote_plus(tag)
-        q_url = ''.join([self._baseUrl, self._searchQuery])
-
-        return q_url.format(q_string, 15, '')
+        nid = self.make_node(0, name, depth)
+        self._graph.nodes[nid]['tag'] = tag
+        return nid;
 
     def make_node_tag(self, tag, depth):
         """
@@ -50,24 +47,26 @@ class TwitterApi(CrawlerAbstractAPI):
         depth -- depth of the search to this point
         graph -- Graph object to add the node to
         """
-        nid = super().make_node(0, tag, depth)
+        nid = super().make_node(1, tag, depth)
         return nid
 
-    def make_node_user(self, name, user, depth):
-        """
-               Makes a node representing a user
-        """
-        nid = self.make_node(1, name, depth)
-        # self._graph.nodes[name] =
-        return nid;
+    def execute_names_query(self, tag):
+        try:
+            data = self._api.search('#'+tag, count=10, tweet_mode='extended', result_type='recent')
+
+            return True, [(tweet._json['user']['screen_name'], tweet._json['user']['id']) for tweet in data]
+        except ValueError as e:
+            print(e)
+        except TypeError as e:
+            print(e)
+            return self._ERROR_RESULT
 
     def execute_tags_query(self, tag):
         """
         Executes the tags query and parses the results
         """
-        url = self.make_tags_url(tag)
         try:
-            data = self._api.search("#TeamJB", count=2, tweet_mode='extended', result_type='recent')
+            data = self._api.search('#'+tag, count=10, tweet_mode='extended', result_type='recent')
 
             tags = []
             for tweet in data:
@@ -81,28 +80,42 @@ class TwitterApi(CrawlerAbstractAPI):
             print(e)
             return self._ERROR_RESULT
 
-
-
     # These are TAGS bipartite 0
-    def get_child0(self, node, graph, state, new_depth):
-        tag = graph.nodes[node]['label']
+    def get_child0(self, node, graph, state):
+        tag = graph.nodes[node]['tag']
         success, data = self.execute_tags_query(tag)
 
         if success:
             # Distinguish nodes previously seen from new nodes
-            old_tags = [tag for tag in data if state.is_visited(0, tag)]
-            new_tags = [tag for tag in data if not (state.is_visited(0, tag))]
+            old_tags = [tag for tag in data if state.is_visited(1, tag)]
+            new_tags = [tag for tag in data if not (state.is_visited(1, tag))]
 
             # Get the existing nodes
-            old_nodes = [state.visited_node(0, tag) for tag in old_tags]
+            old_nodes = [state.visited_node(1, tag) for tag in old_tags]
 
             # Create the new nodes
             new_depth = graph.node[node]['_depth'] + 1
             new_nodes = [self.make_node_tag(tag, new_depth)
                          for tag in new_tags]
+            # Return the dict with the info
             return {'success': True, 'new': new_nodes, 'old': old_nodes}
         else:
             return {'success': False}
 
-    def get_child1(self, node, graph, state, new_depth):
-        pass
+    def get_child1(self, node, graph, state):
+        tag = graph.nodes[node]['label']
+        success, data = self.execute_names_query(tag)
+        if success:
+            # Distinguish nodes previously seen from new nodes
+            old_names = [name for name, user_id in data if state.is_visited(0, name)]
+            new_names = [(name, user_id) for name, user_id in data
+                         if not (state.is_visited(0, name))]
+            old_nodes = [state.visited_node(0, name) for name in old_names]
+
+            new_depth = graph.node[node]['_depth'] + 1
+            new_nodes = [self.make_node_user(name, tag, new_depth)
+                         for name, user_id in new_names]
+
+            return {'success': True, 'new': new_nodes, 'old': old_nodes}
+        else:
+            return {'success': False}

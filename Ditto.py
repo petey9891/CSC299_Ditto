@@ -14,8 +14,12 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 data = api.search("#TeamJB", count=2, tweet_mode='extended', result_type='recent')
 
-# tweet_hashtags = [t['text'] for t in tweet._json['entities']['hashtags'] for tweet in data]
+for tweet in data:
+    print(tweet._json['user']['screen_name'])
+    print(tweet._json['user']['id'])
 
+# tweet_hashtags = [t['text'] for t in tweet._json['entities']['hashtags'] for tweet in data]
+#
 # raw_tags = [tweet._json['entities']['hashtags'] for tweet in data]
 
 # tags = [print(t['text']) for t in raw_tags  if len(t) > 0]
