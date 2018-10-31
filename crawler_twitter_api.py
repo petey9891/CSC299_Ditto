@@ -15,11 +15,6 @@ class TwitterApi(CrawlerAbstractAPI):
     _delay -- Number of seconds to wait between API calls
     """
 
-    _consumer_key = "NkQPzpiRJZ6CJVeRzrVLqIGuh"
-    _consumer_secret = "yMhadrMcNmAQyFGX8YKDWtyX6szbr3hKGwCKrz9xp36KPI7tMX"
-    _access_key = "1066866967-dDLwsuOq4YdKRm1v1v4lbzWlu3rTMvPoS8TYjWG"
-    _access_secret = "FiC4HGQDEInch3tar4nGDwpApxcwI2KesP85h3JXOX5fo"
-
     _auth = tweepy.OAuthHandler(_consumer_key, _consumer_secret)
     _auth.set_access_token(_access_key, _access_secret)
     _api = tweepy.API(_auth)
