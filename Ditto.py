@@ -3,10 +3,6 @@ import json
 import time
 import re
 # Twitter API credentials
-consumer_key = "NkQPzpiRJZ6CJVeRzrVLqIGuh"
-consumer_secret = "yMhadrMcNmAQyFGX8YKDWtyX6szbr3hKGwCKrz9xp36KPI7tMX"
-access_key = "1066866967-dDLwsuOq4YdKRm1v1v4lbzWlu3rTMvPoS8TYjWG"
-access_secret = "FiC4HGQDEInch3tar4nGDwpApxcwI2KesP85h3JXOX5fo"
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_key, access_secret)
