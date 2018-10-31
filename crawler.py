@@ -1,7 +1,7 @@
 import networkx as nx
 import argparse
-
 from crawler_my_api import MyAPI
+from crawler_twitter_api import TwitterApi
 from crawler_state import CrawlerState
 
 
@@ -39,6 +39,7 @@ class Crawler:
         self._api = api
         self._api.set_state(self._state)
         self._api.set_graph(self._net)
+
 
     def get_state(self): return self._state
 
@@ -212,6 +213,7 @@ if __name__ == '__main__':
 
     # Set up the Crawler
     api = MyAPI()
+    # api = TwitterApi()
     crawler = Crawler(depth, api)
 
     # If loading a previous crawl
