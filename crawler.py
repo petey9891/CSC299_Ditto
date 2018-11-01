@@ -212,8 +212,8 @@ if __name__ == '__main__':
     state_filename = dictargs['statefile']
 
     # Set up the Crawler
-    api = MyAPI()
-    # api = TwitterApi()
+    # api = MyAPI()
+    api = TwitterApi()
     crawler = Crawler(depth, api)
 
     # If loading a previous crawl

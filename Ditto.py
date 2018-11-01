@@ -4,15 +4,20 @@ import time
 import re
 # Twitter API credentials
 
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_key, access_secret)
+
+auth = tweepy.OAuthHandler(_consumer_key, _consumer_secret)
+auth.set_access_token(_access_key, _access_secret)
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
-data = api.search("#TeamJB", count=2, tweet_mode='extended', result_type='recent')
+# data = api.search("#TeamJB", count=10, tweet_mode='extended', result_type='recent')
+# print(data)
+# for tweet in data:
+#     print(tweet._json['user']['id'])
+
+data = api.user_timeline('3785297354')
 
 for tweet in data:
-    print(tweet._json['user']['screen_name'])
-    print(tweet._json['user']['id'])
+    print(tweet._json['entities']['hashtags'])
 
 # tweet_hashtags = [t['text'] for t in tweet._json['entities']['hashtags'] for tweet in data]
 #

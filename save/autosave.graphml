@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="tag" attr.type="string" for="node" id="d4"/>
+<key attr.name="_expanded" attr.type="long" for="node" id="d3"/>
+<key attr.name="_depth" attr.type="long" for="node" id="d2"/>
+<key attr.name="bipartite" attr.type="long" for="node" id="d1"/>
+<key attr.name="label" attr.type="string" for="node" id="d0"/>
+<graph edgedefault="undirected"><node id="100">
+  <data key="d0">#TeamJB</data>
+  <data key="d1">1</data>
+  <data key="d2">0</data>
+  <data key="d3">1</data>
+</node>
+<node id="101">
+  <data key="d0">#TeamRauner</data>
+  <data key="d1">1</data>
+  <data key="d2">0</data>
+  <data key="d3">1</data>
+</node>
+<node id="102">
+  <data key="d0">IL4Hillary</data>
+  <data key="d1">0</data>
+  <data key="d2">1</data>
+  <data key="d3">1</data>
+  <data key="d4">#TeamJB</data>
+</node>
+<node id="103">
+  <data key="d0">kjune65</data>
+  <data key="d1">0</data>
+  <data key="d2">1</data>
+  <data key="d3">1</data>
+  <data key="d4">#TeamJB</data>
+</node>
+<node id="104">
+  <data key="d0">OneVoiceOneUSA</data>
+  <data key="d1">0</data>
+  <data key="d2">1</data>
+  <data key="d3">1</data>
+  <data key="d4">#TeamJB</data>
+</node>
+<node id="105">
+  <data key="d0">MatthewFoldi</data>
+  <data key="d1">0</data>
+  <data key="d2">1</data>
+  <data key="d3">1</data>
+  <data key="d4">#TeamRauner</data>
+</node>
+<node id="106">
+  <data key="d0">Camblin_Colin</data>
+  <data key="d1">0</data>
+  <data key="d2">1</data>
+  <data key="d3">1</data>
+  <data key="d4">#TeamRauner</data>
+</node>
+<node id="107">
+  <data key="d0">EckleyToni</data>
+  <data key="d1">0</data>
+  <data key="d2">1</data>
+  <data key="d3">1</data>
+  <data key="d4">#TeamRauner</data>
+</node>
+<node id="108">
+  <data key="d0">Evelynetti</data>
+  <data key="d1">0</data>
+  <data key="d2">1</data>
+  <data key="d3">1</data>
+  <data key="d4">#TeamRauner</data>
+</node>
+<node id="109">
+  <data key="d0">Poor_Ricky</data>
+  <data key="d1">0</data>
+  <data key="d2">1</data>
+  <data key="d3">1</data>
+  <data key="d4">#TeamRauner</data>
+</node>
+<node id="110">
+  <data key="d0">Holden2283</data>
+  <data key="d1">0</data>
+  <data key="d2">1</data>
+  <data key="d3">0</data>
+  <data key="d4">#TeamRauner</data>
+</node>
+<node id="111">
+  <data key="d0">DonSynowiec</data>
+  <data key="d1">0</data>
+  <data key="d2">1</data>
+  <data key="d3">0</data>
+  <data key="d4">#TeamRauner</data>
+</node>
+<node id="112">
+  <data key="d0">TijoKJose117</data>
+  <data key="d1">0</data>
+  <data key="d2">1</data>
+  <data key="d3">0</data>
+  <data key="d4">#TeamRauner</data>
+</node>
+<node id="113">
+  <data key="d0">kanegop</data>
+  <data key="d1">0</data>
+  <data key="d2">1</data>
+  <data key="d3">0</data>
+  <data key="d4">#TeamRauner</data>
+</node>
+<node id="114">
+  <data key="d0">TeamJB</data>
+  <data key="d1">1</data>
+  <data key="d2">2</data>
+  <data key="d3">0</data>
+</node>
+<node id="115">
+  <data key="d0">BlueWave</data>
+  <data key="d1">1</data>
+  <data key="d2">2</data>
+  <data key="d3">0</data>
+</node>
+<node id="116">
+  <data key="d0">TeamJB</data>
+  <data key="d1">1</data>
+  <data key="d2">2</data>
+  <data key="d3">0</data>
+</node>
+<node id="117">
+  <data key="d0">TeamJB</data>
+  <data key="d1">1</data>
+  <data key="d2">2</data>
+  <data key="d3">0</data>
+</node>
+<node id="118">
+  <data key="d0">TeamRauner</data>
+  <data key="d1">1</data>
+  <data key="d2">2</data>
+  <data key="d3">0</data>
+</node>
+<node id="119">
+  <data key="d0">TeamRauner</data>
+  <data key="d1">1</data>
+  <data key="d2">2</data>
+  <data key="d3">0</data>
+</node>
+<node id="120">
+  <data key="d0">TeamRauner</data>
+  <data key="d1">1</data>
+  <data key="d2">2</data>
+  <data key="d3">0</data>
+</node>
+<node id="121">
+  <data key="d0">TeamRauner</data>
+  <data key="d1">1</data>
+  <data key="d2">2</data>
+  <data key="d3">0</data>
+</node>
+<node id="122">
+  <data key="d0">TeamRauner</data>
+  <data key="d1">1</data>
+  <data key="d2">2</data>
+  <data key="d3">0</data>
+</node>
+<node id="123">
+  <data key="d0">TeamRauner</data>
+  <data key="d1">1</data>
+  <data key="d2">2</data>
+  <data key="d3">0</data>
+</node>
+<node id="124">
+  <data key="d0">TeamRauner</data>
+  <data key="d1">1</data>
+  <data key="d2">2</data>
+  <data key="d3">0</data>
+</node>
+<node id="125">
+  <data key="d0">TeamRauner</data>
+  <data key="d1">1</data>
+  <data key="d2">2</data>
+  <data key="d3">0</data>
+</node>
+<node id="126">
+  <data key="d0">TeamRauner</data>
+  <data key="d1">1</data>
+  <data key="d2">2</data>
+  <data key="d3">0</data>
+</node>
+<edge source="100" target="102"/>
+<edge source="100" target="103"/>
+<edge source="100" target="104"/>
+<edge source="101" target="105"/>
+<edge source="101" target="106"/>
+<edge source="101" target="107"/>
+<edge source="101" target="108"/>
+<edge source="101" target="109"/>
+<edge source="101" target="110"/>
+<edge source="101" target="111"/>
+<edge source="101" target="112"/>
+<edge source="101" target="113"/>
+<edge source="102" target="114"/>
+<edge source="102" target="115"/>
+<edge source="102" target="116"/>
+<edge source="102" target="117"/>
+<edge source="103" target="117"/>
+<edge source="103" target="115"/>
+<edge source="104" target="117"/>
+<edge source="104" target="115"/>
+<edge source="105" target="118"/>
+<edge source="105" target="119"/>
+<edge source="105" target="120"/>
+<edge source="105" target="121"/>
+<edge source="105" target="122"/>
+<edge source="105" target="123"/>
+<edge source="105" target="124"/>
+<edge source="105" target="125"/>
+<edge source="105" target="126"/>
+<edge source="106" target="126"/>
+<edge source="107" target="126"/>
+<edge source="108" target="126"/>
+<edge source="109" target="126"/>
+</graph></graphml>
