@@ -14,6 +14,7 @@ class CrawlerAbstractAPI(ABC):
     """
 
     _delay = 0.5
+    # _delay = 5
 
     _ERROR_RESULT = (False, [])
 
